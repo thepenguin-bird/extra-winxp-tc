@@ -1,0 +1,20 @@
+function xp_pwd
+{
+    local dir="`pwd`"
+
+    echo $dir | tr '/' '\\'
+}
+
+export PS1='C:`xp_pwd`>'
+ 
+echo "Microsoft Windows XP [Version 5.1.2600]"
+echo "(C) Copyright 1985-2001 Microsoft Corp."
+echo
+
+alias cls="clear"
+
+command_not_found_handle() {
+    printf "'%s' is not recognized as an internal or external command,\n" "$1"
+    printf "operable program or batch file.\n"
+    return 127
+}
